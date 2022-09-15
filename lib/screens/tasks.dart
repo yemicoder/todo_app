@@ -17,6 +17,7 @@ class Tasks extends StatelessWidget {
               height: 30,
               decoration: BoxDecoration(
                 color: isDone ? Color(0xff7349fe) : Colors.transparent,
+                borderRadius: BorderRadius.circular(10),
                 border: isDone ? null : Border.all(
                   color: Color(0xff868290),
                   width: 2
@@ -30,10 +31,11 @@ class Tasks extends StatelessWidget {
                 color: isDone ? Colors.white : Colors.transparent,),
             ),
             SizedBox(width: 20,),
-            Text(text ?? 'Unnamed todo',
+            Text(text ?? '(Unnamed todo)',
             style: TextStyle(
               fontSize: 20,
-              color: Color(0xff211551),
+              color: isDone ? Color(0xff211551) : Colors.grey,
+              fontWeight: isDone ? FontWeight.bold : FontWeight.w500,
             ),
             ),
           ],
